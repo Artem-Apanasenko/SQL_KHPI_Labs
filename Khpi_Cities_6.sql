@@ -14,7 +14,7 @@ CREATE TABLE `lines` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `color` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+)
 
 DROP TABLE IF EXISTS `stations`;
 CREATE TABLE `stations` (
@@ -22,7 +22,7 @@ CREATE TABLE `stations` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `line` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+)
 
 DROP TABLE IF EXISTS `transitions`;
 CREATE TABLE `transitions` (
@@ -32,7 +32,7 @@ CREATE TABLE `transitions` (
   PRIMARY KEY (`id`),
   FOREIGN KEY (`start_station`) REFERENCES `stations`(`id`),
   FOREIGN KEY (`end_station`) REFERENCES `stations`(`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+)
 
 INSERT INTO `transitions`(`start_station`, `end_station`) VALUES
 (6, 20),
